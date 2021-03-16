@@ -10,7 +10,7 @@ Ajax Tutuorial
 
 	<h2 class="text-center"> Ajax Form Example</h2> 
 	<div class='col-8 mt-5'>
-	<form method='POST' id='formCreated' data-url="{% url 'home' %}">
+	<form method='POST' id='formCreated' data-url="{% url 'home' %}" enctype="multipart/form-data">
 		<!-- data-url is used in ajax function -->
 		{% csrf_token %}
 		{{ form.as_p }}
