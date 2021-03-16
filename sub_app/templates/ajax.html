@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<script>
+	$("#btn_submit").click(function(){console.log('Save button clicked');});
+	let txt= $("#textid").val()
+	let csr =$("input[name=csrfmiddlewaretoken]").val()
+	mydata ={texts:txt,csrfmiddlewaretoken:csr};
+	console.log(txt)
+	$.ajax({
+		url: "{% url 'save' %}",
+		method: "POST",
+		data: mydata,
+		success: function(response){
+			console.log(txt)
+		}
+
+	})
+	 
+
+</script>
+
+{% endblock %}
